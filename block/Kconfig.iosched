@@ -158,6 +158,10 @@ config IOSCHED_FIFO
  	  Should work best with devices where there is no travel delay.
  
 
+config IOSCHED_MAPLE
+	tristate "Maple I/O scheduler"
+	default y
+
 choice
 	prompt "Default I/O scheduler"
 	default DEFAULT_CFQ
@@ -215,6 +219,8 @@ choice
 	config DEFAULT_ZEN
 		bool "ZEN" if IOSCHED_ZEN=y
 
+	config DEFAULT_MAPLE
+		bool "Maple" if IOSCHED_MAPLE=y
 
 endchoice
 
@@ -232,8 +238,6 @@ config DEFAULT_IOSCHED
 	default "sioplus" if DEFAULT_SIOPLUS
 	default "tripndroid" if DEFAULT_TRIPNDROID
 	default "vr" if DEFAULT_VR
-	default "zen" if DEFAULT_ZEN
-
-endmenu
+	default "maple" if DEFAULT_MAPLE
 
 endif
