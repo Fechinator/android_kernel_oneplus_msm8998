@@ -62,6 +62,10 @@ SUBSYS(net_prio)
 SUBSYS(hugetlb)
 #endif
 
+#if IS_ENABLED(CONFIG_CGROUP_BFQIO)
+SUBSYS(bfqio)
+#endif
+
 /*
  * Subsystems that implement the can_fork() family of callbacks.
  */
