@@ -238,6 +238,9 @@ config DEFAULT_IOSCHED
 	default "sioplus" if DEFAULT_SIOPLUS
 	default "tripndroid" if DEFAULT_TRIPNDROID
 	default "vr" if DEFAULT_VR
+	default "zen" if DEFAULT_ZEN
 	default "maple" if DEFAULT_MAPLE
+
+endmenu
 
 endif
